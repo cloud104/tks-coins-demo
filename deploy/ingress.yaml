@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  labels:
+    app: tks-coins
+  name: ui
+  namespace: tks-coins
+spec:
+  rules:
+  - host: coins.t333666.k8s.sp02.te.tks.sh
+    http:
+      paths:
+      - backend:
+          serviceName: ui
+          servicePort: 80
+        path: /
+        pathType: ImplementationSpecific

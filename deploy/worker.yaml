@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: "2022-02-11T20:06:48Z"
+  generation: 7
+  labels:
+    app: worker
+  name: worker
+  namespace: tks-coins
+  resourceVersion: "236198358"
+  selfLink: /apis/apps/v1/namespaces/tks-coins/deployments/worker
+  uid: 01991eef-4f26-4d74-8c0e-10539e9d67be
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: worker
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: worker
+    spec:
+      containers:
+      - image: us-east1-docker.pkg.dev/tks-gcr-pub/tks-coins/worker:v1.0.0
+        imagePullPolicy: IfNotPresent
+        name: worker
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2022-02-11T20:06:48Z"
+    lastUpdateTime: "2022-02-11T20:07:05Z"
+    message: ReplicaSet "worker-7b5c554897" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2022-02-11T21:55:44Z"
+    lastUpdateTime: "2022-02-11T21:55:44Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 7
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
