@@ -31,7 +31,7 @@ spec:
         app: worker
     spec:
       containers:
-      - image: us-east1-docker.pkg.dev/tks-gcr-pub/tks-coins/worker:v1.0.0
+      - image: us-east1-docker.pkg.dev/tks-gcr-pub/tks-coins/worker:v1.0.2-bug
         imagePullPolicy: IfNotPresent
         name: worker
 status:

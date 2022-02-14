@@ -18,14 +18,21 @@ redis = Redis("redis")
 
 
 def get_random_bytes():
+    start = time.time()
     r = requests.get("http://rng:8080/32")
+    stop = time.time()
+    log.info("Time to get a random number: {}".format(stop - start))
     return r.content
 
 
 def hash_bytes(data):
+    start = time.time()
     r = requests.post("http://hasher:9090/",
                       data=data,
                       headers={"Content-Type": "application/octet-stream"})
+
+    stop = time.time()
+    log.info("Time to hash a number: {}".format(stop - start))
     hex_hash = r.text
     return hex_hash
 
