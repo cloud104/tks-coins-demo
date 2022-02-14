@@ -34,22 +34,3 @@ spec:
       - image: us-east1-docker.pkg.dev/tks-gcr-pub/tks-coins/worker:v1.0.1
         imagePullPolicy: IfNotPresent
         name: worker
-status:
-  availableReplicas: 1
-  conditions:
-  - lastTransitionTime: "2022-02-11T20:06:48Z"
-    lastUpdateTime: "2022-02-11T20:07:05Z"
-    message: ReplicaSet "worker-7b5c554897" has successfully progressed.
-    reason: NewReplicaSetAvailable
-    status: "True"
-    type: Progressing
-  - lastTransitionTime: "2022-02-11T21:55:44Z"
-    lastUpdateTime: "2022-02-11T21:55:44Z"
-    message: Deployment has minimum availability.
-    reason: MinimumReplicasAvailable
-    status: "True"
-    type: Available
-  observedGeneration: 7
-  readyReplicas: 1
-  replicas: 1
-  updatedReplicas: 1
