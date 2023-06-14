@@ -40,4 +40,4 @@ spec:
       - image: us-east1-docker.pkg.dev/tks-gcr-pub/tks-coins/hasher:v1.0.0
         imagePullPolicy: IfNotPresent
         name: hasher
-      terminationGracePeriodSeconds: 10
+      terminationGracePeriodSeconds: 1

@@ -37,7 +37,12 @@ spec:
       labels:
         app: rng
     spec:
+      terminationGracePeriodSeconds: 1
       containers:
       - image: us-east1-docker.pkg.dev/tks-gcr-pub/tks-coins/rng:v1.0.0
         imagePullPolicy: IfNotPresent
         name: rng
+        resources:
+          limits:
+            cpu: 100m
+
